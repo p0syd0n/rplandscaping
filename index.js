@@ -3,7 +3,7 @@ const Database = require("better-sqlite3"); // better-sqlite3 exports a class
 const path = require("path");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8069;
 
 // open database (synchronous, no callback)
 const dbPath = "database/database.db";

@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RP Landscaping - Your Dreamscape Designers</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Sans:wght@400;700&display=swap"
     rel="stylesheet" />
@@ -99,6 +99,18 @@
     .shadow-sm {
       box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     }
+
+    /* Carousel constraints to make images occupy the full slide width */
+    .carousel {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel > * {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 
@@ -107,9 +119,13 @@
   <div class="flex flex-col min-h-screen">
     <header class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
       <div class="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <a href="/" class="flex items-center gap-2">
-          <img src="/logo.png" alt="RP Landscaping Logo" width="200" height="50" class="object-contain" />
-        </a>
+	      <a href="/" class="flex items-center gap-2">
+  <img src="https://i.ibb.co/cX72BNJ3/logo.png" 
+       alt="RP Landscaping Logo" 
+       width="160" height="40"
+       class="object-contain py-2" />
+</a>
+
         <div class="flex items-center gap-4">
           <a href="tel:+7745599448"
             class="hidden sm:flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
@@ -136,10 +152,11 @@
         </div>
       </div>
     </header>
+
     <main class="flex-1">
       <section class="relative w-full py-24 md:py-32 lg:py-40 flex items-center justify-center text-center text-white">
         <div class="absolute inset-0 bg-black/50 z-10"></div>
-        <img src="https://placehold.co/1920x1080.png" alt="Beautifully landscaped garden"
+        <img src="https://i.ibb.co/TxgVz082/thumbnail-image001.jpg" alt="Beautifully landscaped garden"
           data-ai-hint="landscaped garden" class="absolute inset-0 w-full h-full object-cover z-0" />
         <div class="container px-4 md:px-6 z-20">
           <h1 class="text-4xl font-headline font-bold tracking-tight sm:text-5xl md:text-6xl text-white drop-shadow-md">
@@ -482,97 +499,107 @@
               See the transformations we've brought to life for our clients.
             </p>
           </div>
-          <p class="text-center mt-8">Portfolio section coming soon!</p>
+          <p class="text-center mt-8">Portfolio below — swipe or use the arrows to view before & afters.</p>
 
-<div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-  <!-- Carousel 0 -->
-  <div class="relative w-full">
-    <div class="relative h-64 overflow-hidden rounded-lg">
-      <div class="carousel flex transition-transform duration-500 ease-in-out" data-carousel="0">
-        <img src="/images/carousel0image0.jpg" alt="Portfolio Image 1" class="w-full h-full object-cover min-w-full">
-        <img src="/images/carousel0image1.jpg" alt="Portfolio Image 2" class="w-full h-full object-cover min-w-full">
-        <img src="/images/carousel0image2.jpg" alt="Portfolio Image 3" class="w-full h-full object-cover min-w-full">
-      </div>
-    </div>
-    <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-prev="0">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-        <path d="M15 18l-6-6 6-6"></path>
-      </svg>
-    </button>
-    <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-next="0">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-        <path d="M9 18l6-6-6-6"></path>
-      </svg>
-    </button>
-  </div>
+          <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Carousel 0 -->
+            <div class="relative w-full">
+              <div class="relative h-64 overflow-hidden rounded-lg">
+                <div class="carousel transition-transform duration-500 ease-in-out" data-carousel="0">
+                  <!-- two images only -->
+                  <img src="https://i.ibb.co/DHgZC655/before1.jpg" alt="Before 1" class="w-full h-full object-cover" />
+                  <img src="https://i.ibb.co/ycHpGMrc/after1.jpg" alt="After 1" class="w-full h-full object-cover" />
+                </div>
+              </div>
+              <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-prev="0" aria-label="Previous slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+              </button>
+              <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-next="0" aria-label="Next slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+              </button>
+            </div>
 
-  <!-- Carousel 1 -->
-  <div class="relative w-full">
-    <div class="relative h-64 overflow-hidden rounded-lg">
-      <div class="carousel flex transition-transform duration-500 ease-in-out" data-carousel="1">
-        <img src="/images/carousel1image0.jpg" alt="Portfolio Image 4" class="w-full h-full object-cover min-w-full">
-        <img src="/images/carousel1image1.jpg" alt="Portfolio Image 5" class="w-full h-full object-cover min-w-full">
-        <img src="/images/carousel1image2.jpg" alt="Portfolio Image 6" class="w-full h-full object-cover min-w-full">
-      </div>
-    </div>
-    <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-prev="1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-        <path d="M15 18l-6-6 6-6"></path>
-      </svg>
-    </button>
-    <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-next="1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-        <path d="M9 18l6-6-6-6"></path>
-      </svg>
-    </button>
-  </div>
+            <!-- Carousel 1 -->
+            <div class="relative w-full">
+              <div class="relative h-64 overflow-hidden rounded-lg">
+                <div class="carousel transition-transform duration-500 ease-in-out" data-carousel="1">
+                  <img src="https://i.ibb.co/N6w8QPhd/before2.jpg" alt="Before 2" class="w-full h-full object-cover" />
+                  <img src="https://i.ibb.co/Qv90dJ6y/after2.jpg" alt="After 2" class="w-full h-full object-cover" />
+                </div>
+              </div>
+              <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-prev="1" aria-label="Previous slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+              </button>
+              <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-next="1" aria-label="Next slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+              </button>
+            </div>
 
-  <!-- Carousel 2 -->
-  <div class="relative w-full">
-    <div class="relative h-64 overflow-hidden rounded-lg">
-      <div class="carousel flex transition-transform duration-500 ease-in-out" data-carousel="2">
-        <img src="/images/carousel2image0.jpg" alt="Portfolio Image 7" class="w-full h-full object-cover min-w-full">
-        <img src="/images/carousel2image1.jpg" alt="Portfolio Image 8" class="w-full h-full object-cover min-w-full">
-        <img src="/images/carousel2image2.jpg" alt="Portfolio Image 9" class="w-full h-full object-cover min-w-full">
-      </div>
-    </div>
-    <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-prev="2">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-        <path d="M15 18l-6-6 6-6"></path>
-      </svg>
-    </button>
-    <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-next="2">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-        <path d="M9 18l6-6-6-6"></path>
-      </svg>
-    </button>
-  </div>
-</div>
+            <!-- Carousel 2 -->
+            <div class="relative w-full">
+              <div class="relative h-64 overflow-hidden rounded-lg">
+                <div class="carousel transition-transform duration-500 ease-in-out" data-carousel="2">
+                  <img src="https://i.ibb.co/S40N3m3y/before3.jpg" alt="Before 3" class="w-full h-full object-cover" />
+                  <img src="https://i.ibb.co/QvBYrHyK/after3.jpg" alt="After 3" class="w-full h-full object-cover" />
+                </div>
+              </div>
+              <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-prev="2" aria-label="Previous slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+              </button>
+              <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-primary/80 text-primary-foreground rounded-full p-2 hover:bg-primary" data-carousel-next="2" aria-label="Next slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
 
-<script>
-  document.querySelectorAll('[data-carousel]').forEach(carousel => {
-    const index = carousel.getAttribute('data-carousel');
-    let currentSlide = 0;
-    const slides = carousel.children.length;
+          <script>
+            document.querySelectorAll('[data-carousel]').forEach(carousel => {
+              const index = carousel.getAttribute('data-carousel');
+              let currentSlide = 0;
+              const slides = carousel.children.length;
 
-    const prevButton = document.querySelector(`[data-carousel-prev="${index}"]`);
-    const nextButton = document.querySelector(`[data-carousel-next="${index}"]`);
+              const prevButton = document.querySelector(`[data-carousel-prev="${index}"]`);
+              const nextButton = document.querySelector(`[data-carousel-next="${index}"]`);
 
-    function updateCarousel() {
-      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
+              function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+              }
 
-    prevButton.addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + slides) % slides;
-      updateCarousel();
-    });
+              prevButton.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides) % slides;
+                updateCarousel();
+              });
 
-    nextButton.addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % slides;
-      updateCarousel();
-    });
-  });
-</script>
+              nextButton.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides;
+                updateCarousel();
+              });
+
+              // Optional: keyboard control and swipe
+              carousel.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prevButton.click();
+                if (e.key === 'ArrowRight') nextButton.click();
+              });
+
+              // ensure focusable for keyboard
+              carousel.setAttribute('tabindex', '0');
+
+              // initialize
+              updateCarousel();
+            });
+          </script>
 
         </div>
       </section>
@@ -615,7 +642,7 @@
                   <h3 class="font-headline text-2xl font-semibold leading-none tracking-tight">Get in Touch</h3>
                 </div>
                 <div class="p-6 pt-0">
-                  <form class="space-y-6" action="/submitForm", method="POST">
+                  <form class="space-y-6" action="/submitForm" method="POST">
                     <div>
                       <label class="text-sm font-medium leading-none" for="name">Full Name</label>
                       <input type="text"
@@ -655,7 +682,7 @@
     <footer class="bg-primary/90 text-primary-foreground py-8">
       <div class="container mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between">
         <div class="flex items-center gap-2">
-          <img src="/logo.png" alt="RP Landscaping Logo" width="150" height="38"
+          <img src="https://i.ibb.co/cX72BNJ3/logo.png" alt="RP Landscaping Logo" width="150" height="38"
             class="object-contain filter brightness-0 invert" />
         </div>
         <div class="flex items-center gap-4 mt-4 sm:mt-0">
@@ -673,3 +700,5 @@
 </body>
 
 </html>
+```
+
